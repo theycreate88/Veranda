@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veranda – Where Gamers Breathe</title>
+  <meta name="description" content="Veranda is a vibrant digital game store where gamers breathe. Discover, explore, and enjoy your favorite games all in one place." />
+  <meta name="author" content="theycreate88" />
+  <meta name="keywords" content="Veranda, game store, digital games, PC games, indie games, game marketplace, theycreate88, gaming platform" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="theme-color" content="#1e1e1e" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://theycreate88.github.io/veranda/assets/favicon.png" type="image/png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://theycreate88.github.io/veranda/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Veranda – Where Gamers Breathe" />
+  <meta property="og:description" content="A vibrant digital game store where gamers breathe. Discover, explore, and enjoy your favorite games." />
+  <meta property="og:url" content="https://theycreate88.github.io/veranda/" />
+  <meta property="og:image" content="https://theycreate88.github.io/veranda/assets/preview.png" />
+  <meta property="og:site_name" content="Veranda" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Veranda – Where Gamers Breathe" />
+  <meta name="twitter:description" content="A vibrant digital game store where gamers breathe. Discover, explore, and enjoy your favorite games." />
+  <meta name="twitter:image" content="https://theycreate88.github.io/veranda/assets/preview.png" />
+  <meta name="twitter:creator" content="@theycreate88" />
+
+   
+</head>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    html,
+    body {
+        font-family: acumin-pro, Acumin Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(16, 28, 68);
+
+
+    }
+
+
+    main {
+        height: 100%;
+        width: 100%;
+        display: flex;
+
+    }
+
+    #sidebar {
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    #sidebar::-webkit-scrollbar {
+        display: none;
+        /* hide sidebar scrollbar */
+    }
+
+    #sidebar {
+        height: 100%;
+        flex: 0 0 250px;
+        /* or any fixed width */
+        max-width: 100%;
+        background-image: linear-gradient(to bottom, black, black, #9d0a0a, #1414d1);
+        min-width: 0;
+        padding-left: 30px;
+        padding-top: 40px;
+        color: white;
+
+    }
+
+    #dots {
+        display: flex;
+        gap: 10px;
+    }
+
+    #dot1 {
+
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: red;
+    }
+
+    #dot2 {
+
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: #d89c34;
+    }
+
+    #dot3 {
+
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: #30d48c;
+    }
+
+
+    #sidebar a {
+        opacity: 0.4;
+        font-weight: 100;
+        transition: all 0.8s ease;
+        width: fit-content;
+    }
+
+
+    #sidebar a:hover {
+        opacity: 1;
+    }
+
+    #sidebar h2 {
+
+        font-weight: 100;
+    }
+
+
+
+    #featured a {
+        margin-top: 30px;
+        display: block;
+        color: white;
+        text-decoration: none;
+
+
+    }
+
+    #games a {
+        margin-top: 30px;
+        display: block;
+        color: white;
+        text-decoration: none;
+
+
+    }
+
+    #adons a {
+        margin-top: 30px;
+        display: block;
+        color: white;
+        text-decoration: none;
+
+
+    }
+
+    #setting {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        padding-top: 200px;
+        display: flex;
+    }
+
+    #setting a {
+
+        margin-top: 2px;
+        display: block;
+        margin-left: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    #main::-webkit-scrollbar {
+        display: none;
+        /* hide sidebar scrollbar */
+    }
+
+    #main {
+        overflow-y: auto;
+        height: 100%;
+        flex: 1;
+        min-width: 0;
+        /* necessary for overflow fix */
+        background-color: rgb(16, 28, 68);
+        padding-left: 80px;
+
+    }
+
+    #searchdiv {
+        width: fit-content;
+        margin-top: 30px;
+        display: flex;
+    }
+
+   
+
+    #search {
+        margin-left: 10px;
+        background-color: transparent;
+        border: none;
+        color: white;
+
+    }
+
+    #search:focus {
+        outline: none;
+    }
+
+    #topimg {
+        color: white;
+        position: relative;
+        width: 100%;
+        height: 70%;
+        overflow: hidden;
+
+        background-image:
+            /* Bottom fade */
+            linear-gradient(to top, rgba(16, 28, 68, 1), rgba(16, 28, 68, 0) 30%),
+            /* Top-left corner fade */
+            linear-gradient(to top left, rgba(16, 28, 68, 0.9), rgba(16, 28, 68, 0)),
+            /* Actual background image */
+            url('godofwar.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    #topimg h1 {
+        position: absolute;
+        margin-top: 140px;
+        left: 80px;
+        margin-left: 0;
+        color: white;
+        font-size: 66px;
+        letter-spacing: 15px;
+        max-width: calc(100% - 100px);
+        /* prevent overflow */
+        word-break: break-word;
+    }
+
+    #topimg h2 {
+        position: absolute;
+        margin-top: 225px;
+        left: 85px;
+        margin-left: 0;
+        letter-spacing: 2px;
+        max-width: calc(100% - 100px);
+        /* prevent overflow */
+        word-break: break-word;
+    }
+
+    #buybtn {
+        left: 85px;
+        max-width: calc(100% - 100px);
+        /* prevent overflow */
+        word-break: break-word;
+        position: absolute;
+        display: inline-block;
+        text-decoration: none;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        color: white;
+        background-image: linear-gradient(to right, #6711d0, #4465ea);
+        height: 40px;
+        width: 120px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 285px;
+        margin-left: 0;
+        border-radius: 20px;
+        transition: all 0.8s ease-in-out;
+    }
+
+    #buybtn:hover {
+        transform: scale(1.025);
+        opacity: 0.8;
+    }
+
+    .gamesheading {
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    #topgames {
+        display: flex;
+        overflow-x: auto;
+
+    }
+
+    #topgames::-webkit-scrollbar {
+        display: none;
+        /*Removes scroll bar*/
+    }
+
+    .topgamecover {
+        position: relative;
+        flex: 0 0 auto;
+        /* Prevent shrinking */
+        height: 200px;
+        width: 450px;
+        background-color: bisque;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+
+
+    }
+
+    .hide {
+        line-height: 1.6;
+        position: absolute;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        color: white;
+        align-content: flex-end;
+        opacity: 0;
+        visibility: hidden;
+        height: 200px;
+        width: 450px;
+        background: linear-gradient(to bottom, rgba(14, 14, 28, 0.3), rgba(14, 14, 28, 0.9));
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .hide h4 {
+        font-weight: 100;
+    }
+
+    .hide p {
+        opacity: 0.6;
+        font-size: 12px;
+    }
+
+    .topgamecover:hover .hide {
+
+        background-color: rgba(14, 14, 28, 0.462);
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+
+    #featuredgames {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    #featuredgames::-webkit-scrollbar {
+        display: none;
+           /*Removes scroll bar*/
+    }
+
+    .featuredgamecover {
+        position: relative;
+        flex: 0 0 auto;
+        height: 320px;
+        width: 250px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: bisque;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .featuredgamecover:hover {
+        transform: translateY(-16px);
+    }
+
+
+    .feathide {
+      
+        line-height: 1.6;
+        position: absolute;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        color: white;
+        align-content: flex-end;
+        opacity: 0;
+        visibility: hidden;
+        height: 320px;
+        width: 250px;
+        background: linear-gradient(to bottom, rgba(14, 14, 28, 0.3), rgba(14, 14, 28, 0.9));
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .feathide h4 {
+        font-weight: 100;
+    }
+
+    .feathide p {
+        opacity: 0.6;
+        font-size: 16px;
+    }
+
+    .featuredgamecover:hover .feathide {
+
+        background-color: rgba(14, 14, 28, 0.462);
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    #game1 {
+
+        background-image: url('deadcells.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #game2 {
+
+        background-image: url('horizon.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #game3 {
+
+        background-image: url('moonlighter.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+
+    #game4 {
+
+        background-image: url('lastofus.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    #game5 {
+
+        background-image: url('granturismo.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    #game6 {
+
+        background-image: url('rachetandclank.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #featgame1 {
+
+        background-image: url('fortnite.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #featgame2 {
+
+        background-image: url('godfall.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #featgame3 {
+
+        background-image: url('helldivers.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #featgame4 {
+
+        background-image: url('spiderman2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    #featgame5 {
+
+        background-image: url('cyberpunk.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #featgame6 {
+
+        background-image: url('pathless.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #featgame7 {
+
+        background-image: url('deadisland2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    
+    #mobileMenuIcon {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: white;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* Overlay background when sidebar is open on mobile */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Mobile sidebar behavior */
+@media (max-width: 768px) {
+    #mobileMenuIcon {
+        display: block;
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100%;
+        width: 250px;
+        transition: left 0.3s ease-in-out;
+        z-index: 1002;
+    }
+
+    #sidebar.open {
+        left: 0;
+    }
+
+    #main {
+
+        padding-left: 20px;
+    }
+
+       #searchdiv {
+        width: fit-content;
+        margin-top: 30px;
+        display: flex;
+        justify-self: end;
+    }
+
+    #searchdiv img{
+        margin-bottom: 5px;
+        height: 12px;
+        width: 12px;
+    }
+    #search {
+        font-size: 10px;
+        margin-left: 10px;
+        background-color: transparent;
+        border: none;
+        color: white;
+
+    }
+
+      #topimg {
+        color: white;
+        position: relative;
+        width: 100%;
+        height: 30%;
+        overflow: hidden;
+      
+        background-image:
+            /* Bottom fade */
+            linear-gradient(to top, rgba(16, 28, 68, 1), rgba(16, 28, 68, 0) 30%),
+            /* Top-left corner fade */
+            linear-gradient(to top left, rgba(16, 28, 68, 0.9), rgba(16, 28, 68, 0)),
+            /* Actual background image */
+            url('godofwar.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    #topimg h1 {
+        position: absolute;
+        margin-top: 40px;
+        left: 20px;
+        margin-left: 0;
+        color: white;
+        font-size: 25px;
+        letter-spacing: 5px;
+        max-width: calc(100% - 100px);
+        /* prevent overflow */
+        word-break: break-word;
+    }
+
+    #topimg h2 {
+        font-size: 8px;
+        position: absolute;
+        margin-top: 75px;
+        left: 21px;
+        margin-left: 0;
+        letter-spacing: 1px;
+        max-width: calc(100% - 100px);
+        /* prevent overflow */
+        word-break: break-word;
+    }
+
+    #buybtn {
+        left: 20px;
+        max-width: calc(100% - 100px);
+        /* prevent overflow */
+        word-break: break-word;
+        position: absolute;
+        display: inline-block;
+        text-decoration: none;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        color: white;
+        background-image: linear-gradient(to right, #6711d0, #4465ea);
+        height: 20px;
+        width: 50px;
+        font-size: 6px;
+        font-weight: 600;
+        margin-top: 95px;
+        margin-left: 0;
+        border-radius: 20px;
+        transition: all 0.8s ease-in-out;
+    }
+     .topgamecover {
+        position: relative;
+        flex: 0 0 auto;
+        /* Prevent shrinking */
+        height: 200px;
+        width: 335px;
+        background-color: bisque;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+
+
+    }
+
+    .hide {
+        line-height: 1.6;
+        position: absolute;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        color: white;
+        align-content: flex-end;
+        opacity: 0;
+        visibility: hidden;
+        height: 200px;
+        width: 400px;
+        background: linear-gradient(to bottom, rgba(14, 14, 28, 0.3), rgba(14, 14, 28, 0.9));
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+}
+
+</style>
+
+<body>
+    <main>
+        <div id="sidebar">
+
+            <div id="dots">
+                <div id="dot1"></div>
+                <div id="dot2"></div>
+                <div id="dot3"></div>
+            </div>
+            <br><br><br>
+            <h2><img src="playstationstore.png" alt="" height="40px" width="200px"></h2><br><br><br><br>
+            <div id="featured">
+                <h2>Featured</h2>
+                <a href="">Holiday Sale</a>
+                <a href="">PlayStation Hits</a>
+                <a href="">PlayStation Plus</a>
+                <a href="">Popular Games</a>
+            </div>
+            <br><br><br><br>
+
+            <div id="games">
+                <h2>GAMES</h2><br>
+                <a href="">All Games</a>
+                <a href="">Free-To-Play</a>
+                <a href="">Ultimate Editions</a>
+            </div>
+
+            <br><br><br><br>
+            <div id="adons">
+                <h2>ADD-ONS</h2>
+                <a href="">Music Tracks</a>
+                <a href="">Subscriptions</a>
+
+            </div>
+            <br><br>
+            <div id="setting">
+                <img src="setting.png" alt="" height="20px" width="20px"><a href="">Go to Settings</a>
+            </div>
+
+        </div>
+        <div id="main">
+            <div id="mobileMenuIcon">☰</div>
+<div id="overlay"></div>
+
+            <header>
+                <div id="searchdiv">
+                    <img src="searchglass.png" alt="" height="20px" width="20px">
+                    <input type="text" id="search" placeholder="Search games or bundels">
+                </div>
+            </header>
+            <div id="topimg">
+                <h1>GOTY</h1>
+                <h2>ONLY $39.99</h2>
+                <a href="" id="buybtn">BUY NOW</a>
+            </div>
+            <h2 class="gamesheading">Top PS5 Indies</h2>
+            <div id="topgames">
+                <a href="">
+                    <div id="game1" class="topgamecover">
+                        <div class="hide">
+                            <h4>Dead Cells</h4>
+                            <p>The best metrodvania on PS5</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="game2" class="topgamecover">
+                        <div class="hide">
+                            <h4>Horizon Forbidden West</h4>
+                            <p>The best metrodvania on PS5</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="game3" class="topgamecover">
+                        <div class="hide">
+                            <h4>Moon Lighter</h4>
+                            <p>The best metrodvania on PS5</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="game4" class="topgamecover">
+                        <div class="hide">
+                            <h4>THE LAST OF US PART 1</h4>
+                            <p>The best metrodvania on PS5</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="game5" class="topgamecover">
+                        <div class="hide">
+                            <h4>Gran Turismo 7</h4>
+                            <p>The best metrodvania on PS5</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="game6" class="topgamecover">
+                        <div class="hide">
+                            <h4>Ratchet & Clank</h4>
+                            <p>The best metrodvania on PS5</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <h2 class="gamesheading">Featured</h2>
+            <div id="featuredgames">
+                <a href="">
+                    <div id="featgame1" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>Fortnite</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="featgame2" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>God Fall</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="featgame3" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>Hell Divers</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="featgame4" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>Spider Man II</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="featgame5" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>Cyber Punk</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="featgame6" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>The Pathless</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="featgame7" class="featuredgamecover">
+                        <div class="feathide">
+                            <h4>Dead Island 2</h4>
+                            <p>$49.99</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    const menuIcon = document.getElementById('mobileMenuIcon');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuIcon.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.style.display = 'none';
+    });
+</script>
+
+</body>
+
+</html>
